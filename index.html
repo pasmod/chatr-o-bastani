@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>چتر و بستنی</title>
+<meta name="description" content="کسی که روزهای بارانی چتر می‌فروشد و روزهای آفتابی بستنی، کدام ماه‌ها دستش خالی می‌ماند؟ درآمد ماه‌به‌ماه او در ده سال، با هوای واقعی هر روز.">
+<link rel="canonical" href="https://pasmod.github.io/chatr-o-bastani/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pasmod.github.io/chatr-o-bastani/">
+<meta property="og:title" content="چتر و بستنی">
+<meta property="og:description" content="کسی که روزهای بارانی چتر می‌فروشد و روزهای آفتابی بستنی، کدام ماه‌ها دستش خالی می‌ماند؟ درآمد ماه‌به‌ماه او در ده سال، با هوای واقعی هر روز.">
+<meta property="og:image" content="https://pasmod.github.io/chatr-o-bastani/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="درآمد ماه‌به‌ماه بستنی، چتر و هر دو با هم در تهران، ۱۳۹۵ تا ۱۴۰۴">
+<meta property="og:locale" content="fa_IR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="چتر و بستنی">
+<meta name="twitter:description" content="کسی که روزهای بارانی چتر می‌فروشد و روزهای آفتابی بستنی، کدام ماه‌ها دستش خالی می‌ماند؟ درآمد ماه‌به‌ماه او در ده سال، با هوای واقعی هر روز.">
+<meta name="twitter:image" content="https://pasmod.github.io/chatr-o-bastani/preview.png">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ground: #f4f5f8; --surface: #ffffff; --ink: #1a1d2b; --muted: #585e73; --line: #d8dbe6; --soft: #e9ebf2;
+    --accent: #4c4cb0; --accent-soft: #e3e3f6;
+    --ice: #d9822b; --umbrella: #4c4cb0; --beet: #a3305f; --cooler: #1f8f86; --low: #c0392b;
+    --font: 'Noto Naskh Arabic', 'Vazirmatn', Tahoma, serif;
+    --ui: 'Vazirmatn', Tahoma, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #11131d; --surface: #1a1d2a; --ink: #e8e9f2; --muted: #a0a5b8; --line: #303446; --soft: #222636;
+      --accent: #8280e0; --accent-soft: #23244a;
+      --ice: #e59a4a; --umbrella: #8280e0; --beet: #d35d8c; --cooler: #3fb8ad; --low: #e06a5c; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #11131d; --surface: #1a1d2a; --ink: #e8e9f2; --muted: #a0a5b8; --line: #303446; --soft: #222636;
+    --accent: #8280e0; --accent-soft: #23244a;
+    --ice: #e59a4a; --umbrella: #8280e0; --beet: #d35d8c; --cooler: #3fb8ad; --low: #e06a5c; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { min-height: 100%; }
+  body { margin: 0; background: var(--ground); color: var(--ink); font: 400 clamp(16px, calc(.5vw + .7vh + 4px), 22px)/1.9 var(--font); -webkit-text-size-adjust: 100%; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  button { font: inherit; color: inherit; }
+  p, h1 { margin: 0; }
+
+  .main { min-height: 100vh; display: grid; align-content: center; justify-items: center; text-align: center; gap: clamp(10px, 2vh, 26px); padding-block: clamp(20px, 4vh, 56px); padding-left: max(16px, env(safe-area-inset-left, 0px), 4vw); padding-right: max(16px, env(safe-area-inset-right, 0px), 4vw); }
+  h1 { font-size: clamp(2.2rem, 4.6vw, 4.6rem); font-weight: 700; line-height: 1.3; }
+  .say { max-width: 46ch; }
+
+  .sim { width: min(100%, 76rem); display: grid; gap: clamp(10px, 1.8vh, 20px); }
+  .seg { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; width: min(100%, 58rem); justify-self: center; }
+  .seg button { background: var(--soft); border: 1px solid transparent; border-radius: 10px; padding: .35em .6em; font-size: .9em; line-height: 1.5; cursor: pointer; }
+  .seg button b { display: block; font-size: 1.15em; font-weight: 700; }
+  .seg button span { font-family: var(--ui); font-size: .82em; color: var(--muted); }
+  .seg button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); }
+
+  .chart { display: grid; gap: clamp(8px, 1.4vh, 14px); }
+  .row { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); align-items: end; gap: 14px; }
+  .lab { text-align: start; line-height: 1.45; }
+  .lab b { display: block; font-size: 1.05em; }
+  .lab span { font-family: var(--ui); font-size: .78em; color: var(--muted); }
+  .lab .zero { color: var(--accent); font-weight: 700; }
+  .row.total .lab b { color: var(--ink); }
+  .bars { position: relative; display: flex; align-items: flex-end; gap: clamp(0px, .12vw, 2px); height: clamp(58px, 11vh, 112px); border-bottom: 1px solid var(--line); touch-action: pan-y; cursor: crosshair; }
+  .avg { position: absolute; inset-inline: 0; bottom: 33.333%; border-top: 1.5px dashed var(--muted); opacity: .75; pointer-events: none; z-index: 2; }
+  .col { position: relative; flex: 1 1 0; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; min-width: 0; }
+  .col i { display: block; width: 100%; transition: height .35s ease; }
+  .col.y { box-shadow: inset -1px 0 0 var(--line); }
+  .col.cut::after { content: ""; position: absolute; top: 4px; inset-inline: 0; height: 2px; background: var(--ground); }
+  .col.low::before { content: ""; position: absolute; bottom: -7px; inset-inline: 0; height: 3px; background: var(--low); border-radius: 1px; }
+  .col.hi { background: color-mix(in srgb, var(--ink) 9%, transparent); }
+  .years { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 14px; margin-top: 4px; }
+  .years div { display: grid; grid-template-columns: repeat(10, 1fr); font-family: var(--ui); font-size: .72em; color: var(--muted); }
+  .key { display: flex; justify-content: center; flex-wrap: wrap; gap: 4px 22px; font-size: .82em; color: var(--muted); }
+  .key span::before { content: ""; display: inline-block; vertical-align: middle; margin-inline-end: 7px; }
+  .key .k-avg::before { width: 24px; border-top: 2px dashed var(--muted); }
+  .key .k-low::before { width: 14px; height: 3px; background: var(--low); border-radius: 1px; }
+  .readout { font-size: .9em; min-height: 3.6em; display: grid; align-content: start; }
+
+  .city { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 6px; font-size: .88em; }
+  .city span { color: var(--muted); margin-inline-end: 4px; }
+  .city button { background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: .1em .9em; cursor: pointer; }
+  .city button[aria-pressed="true"] { background: var(--ink); color: var(--ground); border-color: var(--ink); }
+  .hint { font-size: .74em; color: var(--muted); max-width: 70ch; justify-self: center; line-height: 1.8; }
+  .hint a { color: inherit; }
+
+  @media (max-width: 40rem) {
+    .seg { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .row { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+    .lab { display: flex; align-items: baseline; gap: 10px; }
+    .lab b { display: inline; }
+    .years { grid-template-columns: minmax(0, 1fr); }
+    .years > span { display: none; }
+    .years div span:nth-child(even) { visibility: hidden; }
+  }
+  @media (prefers-reduced-motion: reduce) { .col i { transition: none; } }
+</style>
+</head>
+<body>
+<main class="main">
+  <h1>چتر و بستنی</h1>
+  <p class="say">کسی که روزهای بارانی چتر می‌فروشد و روزهای آفتابی بستنی، کدام ماه‌ها دستش خالی می‌ماند؟ این‌جا درآمد ماه‌به‌ماه او را در ده سال می‌بینید، با هوای واقعی هر روز.</p>
+
+  <section class="sim" aria-label="شبیه‌سازی درآمد">
+    <div class="seg" id="pairs" role="group" aria-label="دو کاری که با هم دارد"></div>
+
+    <div class="chart" id="chart"></div>
+    <div class="years" aria-hidden="true"><span></span><div id="years"></div></div>
+    <div class="key"><span class="k-avg">یک ماه معمولی</span><span class="k-low">ماه کم‌درآمد: کمتر از یک‌چهارم یک ماه معمولی</span></div>
+    <p class="readout" id="readout" role="status"></p>
+
+    <div class="city" id="cities" role="group" aria-label="شهر"><span>هوای شهر:</span></div>
+    <p class="hint">درآمدها ساختگی‌اند، هوا واقعی است. بستنی روزهای بی‌باران فروش می‌رود، هرچه گرم‌تر از ۱۵ درجه بیشتر؛ چتر هر روز بارانی یا برفی؛ لبو هرچه سردتر از ۱۵ درجه بیشتر؛ کولر هرچه گرم‌تر از ۲۵ درجه بیشتر. یک ماه معمولی هر چهار کار به یک اندازه درآمد دارد. هوای هر روز از <a href="https://open-meteo.com/">Open-Meteo</a> (ERA5)، فروردین ۱۳۹۵ تا اسفند ۱۴۰۴.</p>
+  </section>
+</main>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  var D = window.DATA, N = D.months, CAP = 3; // bars are drawn up to 3 × a typical month; taller ones are cut
+  var BIZ = { ice: 'بستنی', umbrella: 'چتر', beet: 'لبو', cooler: 'کولر' };
+  var PAIRS = [['ice', 'umbrella'], ['ice', 'beet'], ['umbrella', 'beet'], ['ice', 'cooler']];
+  var CITIES = ['tehran', 'isfahan', 'shiraz', 'mashhad', 'tabriz', 'rasht'];
+  var MONTHS = ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'];
+  var state = { pair: 0, city: 'tehran' }, hover = -1;
+
+  function fa(v, d) { return v.toLocaleString('fa', { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); }
+  function pct(v) { return fa(Math.round(v)) + '٪'; }
+  function signed(r) { return '<bdi dir="ltr">' + (r < 0 ? '−' : '+') + fa(Math.abs(r), 2) + '</bdi>'; }
+  function monthName(i) { var y = D.start[0] + Math.floor(i / 12); return MONTHS[i % 12] + ' ' + fa(y).replace(/٬/g, ''); }
+  function corr(a, b) {
+    var n = a.length, ma = 0, mb = 0, sab = 0, saa = 0, sbb = 0, i;
+    for (i = 0; i < n; i++) { ma += a[i]; mb += b[i]; }
+    ma /= n; mb /= n;
+    for (i = 0; i < n; i++) { sab += (a[i] - ma) * (b[i] - mb); saa += (a[i] - ma) * (a[i] - ma); sbb += (b[i] - mb) * (b[i] - mb); }
+    return sab / Math.sqrt(saa * sbb);
+  }
+  // Every series is scaled so that its average month is 100; the pair's total is shown against its own average (200).
+  function series() {
+    var c = D.cities[state.city], p = PAIRS[state.pair], a = c[p[0]], b = c[p[1]];
+    var total = a.map(function (v, i) { return (v + b[i]) / 2; });
+    return { keys: p, a: a, b: b, total: total };
+  }
+  function lows(v) { return v.filter(function (x) { return x < 25; }).length; }
+  function lowText(n) { return n === 0 ? '<span class="zero">بدون ماه کم‌درآمد</span>' : fa(n) + ' ماه کم‌درآمد'; }
+
+  // ---- build the static parts once
+  var pairsBox = document.getElementById('pairs');
+  PAIRS.forEach(function (p, i) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.dataset.i = i;
+    b.innerHTML = '<b>' + BIZ[p[0]] + ' و ' + BIZ[p[1]] + '</b><span></span>';
+    pairsBox.appendChild(b);
+  });
+  var cityBox = document.getElementById('cities');
+  CITIES.forEach(function (id) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.dataset.city = id; b.textContent = D.cities[id].name;
+    cityBox.appendChild(b);
+  });
+  var years = document.getElementById('years');
+  for (var y = 0; y < N / 12; y++) { var s = document.createElement('span'); s.textContent = fa(D.start[0] + y).replace(/٬/g, ''); years.appendChild(s); }
+
+  var chart = document.getElementById('chart'), rows = [];
+  function makeRow(cls) {
+    var row = document.createElement('div'); row.className = 'row ' + cls;
+    var lab = document.createElement('div'); lab.className = 'lab';
+    var bars = document.createElement('div'); bars.className = 'bars';
+    var avg = document.createElement('div'); avg.className = 'avg'; bars.appendChild(avg);
+    var cols = [];
+    for (var i = 0; i < N; i++) {
+      var c = document.createElement('div'); c.className = 'col' + (i % 12 === 0 && i ? ' y' : ''); c.dataset.i = i;
+      c.appendChild(document.createElement('i')); c.appendChild(document.createElement('i'));
+      bars.appendChild(c); cols.push(c);
+    }
+    row.appendChild(lab); row.appendChild(bars); chart.appendChild(row);
+    var r = { lab: lab, cols: cols }; rows.push(r); return r;
+  }
+  var rowA = makeRow('one'), rowB = makeRow('two'), rowT = makeRow('total');
+
+  function h(v) { return Math.min(v / 100, CAP) / CAP * 100; }
+  function paint(row, parts, colors, total) {
+    row.cols.forEach(function (c, i) {
+      var sum = total[i], top = c.children[0], bottom = c.children[1];
+      // the bottom piece is the first business, the top piece the second (only in the total row)
+      var hb = parts.length > 1 ? h(parts[0][i] / 2) : h(sum);
+      var ht = parts.length > 1 ? Math.max(0, h(sum) - hb) : 0;
+      if (parts.length > 1 && sum / 100 > CAP) { hb = 100 * parts[0][i] / (parts[0][i] + parts[1][i]); ht = 100 - hb; }
+      bottom.style.height = hb + '%'; bottom.style.background = colors[0];
+      top.style.height = ht + '%'; top.style.background = colors[1] || 'transparent';
+      c.classList.toggle('cut', sum / 100 > CAP);
+      c.classList.toggle('low', sum < 25);
+    });
+  }
+
+  function render() {
+    var s = series(), ka = s.keys[0], kb = s.keys[1];
+    var ca = 'var(--' + ka + ')', cb = 'var(--' + kb + ')';
+    paint(rowA, [s.a], [ca], s.a);
+    paint(rowB, [s.b], [cb], s.b);
+    paint(rowT, [s.a, s.b], [ca, cb], s.total);
+    rowA.lab.innerHTML = '<b style="color:' + ca + '">' + BIZ[ka] + '</b><span>' + lowText(lows(s.a)) + '</span>';
+    rowB.lab.innerHTML = '<b style="color:' + cb + '">' + BIZ[kb] + '</b><span>' + lowText(lows(s.b)) + '</span>';
+    rowT.lab.innerHTML = '<b>هر دو با هم</b><span>' + lowText(lows(s.total)) + '</span>';
+    pairsBox.querySelectorAll('button').forEach(function (b, i) {
+      var p = PAIRS[i], c = D.cities[state.city];
+      b.setAttribute('aria-pressed', i === state.pair ? 'true' : 'false');
+      b.querySelector('span').innerHTML = 'همبستگی ' + signed(corr(c[p[0]], c[p[1]]));
+    });
+    cityBox.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.city === state.city ? 'true' : 'false'); });
+    readout();
+  }
+
+  var out = document.getElementById('readout');
+  function readout() {
+    var s = series(), ka = s.keys[0], kb = s.keys[1];
+    rows.forEach(function (r) { r.cols.forEach(function (c, i) { c.classList.toggle('hi', i === hover); }); });
+    if (hover >= 0) {
+      out.innerHTML = '<span><b>' + monthName(hover) + '</b>، در ' + D.cities[state.city].name + ': ' + BIZ[ka] + ' ' + pct(s.a[hover]) + '، ' + BIZ[kb] + ' ' + pct(s.b[hover]) +
+        '، هر دو با هم ' + pct(s.total[hover]) + ' یک ماه معمولی</span>';
+      return;
+    }
+    var worst = 0; s.total.forEach(function (v, i) { if (v < s.total[worst]) worst = i; });
+    out.innerHTML = '<span>در کم‌درآمدترین ماه، ' + monthName(worst) + '، درآمد دو کار با هم ' + pct(s.total[worst]) + ' یک ماه معمولی بود.</span>' +
+      '<span style="color:var(--muted);font-size:.9em">روی هر ستون بزنید تا عددهای همان ماه را ببینید.</span>';
+  }
+
+  pairsBox.addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; state.pair = +b.dataset.i; render(); });
+  cityBox.addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b || !b.dataset.city) return; state.city = b.dataset.city; render(); });
+  function pick(e) { var c = e.target.closest('.col'); var i = c ? +c.dataset.i : -1; if (i !== hover) { hover = i; readout(); } }
+  chart.addEventListener('pointermove', pick);
+  chart.addEventListener('pointerdown', pick);
+  chart.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') { hover = -1; readout(); } });
+
+  render();
+})();
+</script>
+</body>
+</html>

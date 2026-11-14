@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@700&family=Vazirmatn:wght@500;800&display=block" rel="stylesheet">
+<style>
+  :root { --ground: #f4f5f8; --surface: #ffffff; --ink: #1a1d2b; --muted: #585e73; --line: #d8dbe6; --ice: #d9822b; --umbrella: #4c4cb0; --low: #c0392b; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body { background: var(--ground); color: var(--ink); font-family: 'Vazirmatn', sans-serif; padding: 48px 64px; display: grid; grid-template-rows: auto 1fr; gap: 28px; }
+  h1 { font-family: 'Noto Naskh Arabic', serif; font-size: 76px; font-weight: 700; line-height: 1.2; margin: 0; }
+  .sub { font-size: 30px; font-weight: 500; color: var(--muted); margin: 6px 0 0; }
+  .rows { background: var(--surface); border: 2px solid var(--line); border-radius: 18px; padding: 22px 30px; display: grid; gap: 16px; align-content: center; }
+  .row { display: grid; grid-template-columns: 210px 1fr; align-items: end; gap: 22px; }
+  .row b { font-size: 32px; font-weight: 800; white-space: nowrap; line-height: 1.2; }
+  .row b small { display: block; font-size: 20px; font-weight: 500; color: var(--muted); }
+  .bars { position: relative; display: flex; align-items: flex-end; gap: 1px; height: 78px; border-bottom: 2px solid var(--line); }
+  .bars i { flex: 1 1 0; display: flex; flex-direction: column; justify-content: flex-end; height: 100%; }
+  .bars i u { display: block; }
+  .avg { position: absolute; inset-inline: 0; bottom: 33.3%; border-top: 2px dashed var(--muted); opacity: .7; }
+</style>
+</head>
+<body>
+  <div>
+    <h1>چتر و بستنی</h1>
+    <p class="sub">درآمد ماه‌به‌ماه در ده سال، با هوای واقعی تهران</p>
+  </div>
+  <div class="rows" id="rows"></div>
+<script src="data.js"></script>
+<script>
+  var c = DATA.cities.tehran, rows = document.getElementById('rows'), CAP = 3;
+  function h(v) { return Math.min(v / 100, CAP) / CAP * 100; }
+  function lows(v) { return v.filter(function (x) { return x < 25; }).length; }
+  function fa(n) { return n.toLocaleString('fa'); }
+  var total = c.ice.map(function (v, i) { return (v + c.umbrella[i]) / 2; });
+  [['بستنی', 'var(--ice)', [c.ice]], ['چتر', 'var(--umbrella)', [c.umbrella]], ['هر دو با هم', 'var(--ink)', [c.ice, c.umbrella]]].forEach(function (r) {
+    var row = document.createElement('div'); row.className = 'row';
+    var parts = r[2], sum = parts.length > 1 ? total : parts[0];
+    var n = lows(sum);
+    row.innerHTML = '<b style="color:' + r[1] + '">' + r[0] + '<small>' + (n ? fa(n) + ' ماه کم‌درآمد' : 'بدون ماه کم‌درآمد') + '</small></b>';
+    var bars = document.createElement('div'); bars.className = 'bars';
+    bars.innerHTML = '<span class="avg"></span>';
+    sum.forEach(function (v, i) {
+      var col = document.createElement('i');
+      if (parts.length > 1) {
+        var hb = h(parts[0][i] / 2), ht = Math.max(0, h(v) - hb);
+        col.innerHTML = '<u style="height:' + ht + '%;background:var(--umbrella)"></u><u style="height:' + hb + '%;background:var(--ice)"></u>';
+      } else {
+        col.innerHTML = '<u style="height:' + h(v) + '%;background:' + r[1] + '"></u>';
+      }
+      bars.appendChild(col);
+    });
+    row.appendChild(bars); rows.appendChild(row);
+  });
+</script>
+</body>
+</html>
